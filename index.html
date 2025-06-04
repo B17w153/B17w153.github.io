@@ -160,17 +160,17 @@
     </div>
 
     <script>
-        // --------------------------------------------密码修改部分-----------------------------------------------------------------------------//
-        const correctPasswordMD5 = "202cb962ac59075b964b07152d234b70"; //123
-        const RedirectMD5 = "8970381d733d7176e228d4cafe017003";
-        // --------------------------------------------密码修改部分-----------------------------------------------------------------------------//
-        const passwordInput = document.getElementById('passwordInput');
-        const message = document.getElementById('message');
-        const passwordTitle = document.getElementById('passwordTitle');
+ // --------------------------------------------密码修改部分-----------------------------------------------------------------------------//
+const correctPasswordMD5 = "cd2d1db549c1bd1269a50e18765ad9a1"; // DokiSB
+const correctRedirectUrlMD5 = "e86eeba41ebab90506d6c5191f2a0178"; //
+// --------------------------------------------密码修改部分-----------------------------------------------------------------------------//
+const passwordInput = document.getElementById('passwordInput');
+const message = document.getElementById('message');
+const passwordTitle = document.getElementById('passwordTitle');
 
-        // 引入MD5库（需要在HTML中添加MD5库的引用）
-        function validatePassword() {
-        const userPassword = passwordInput.value;
+// 引入MD5库（需要在HTML中添加MD5库的引用）
+function validatePassword() {
+    const userPassword = passwordInput.value;
     
     if (!userPassword) {
         message.textContent = "请输入密码";
@@ -180,11 +180,11 @@
 
     // 计算用户输入密码的MD5值
     const userPasswordMD5 = md5(userPassword);
-    const Redirect = md5(RedirectMD5);
-    if (userPasswordMD5 === correctPasswordMD5) {
-        window.location.href = "https://b17w153.github.io/";
+    const correctRedirectUrl = md5(correctRedirectUrlMD5);
+    if (userPasswordMD5 == correctPasswordMD5) {
+        window.location.href = correctRedirectUrl;
     } else {
-        window.location.href = Redirect;
+        window.location.href = "https://b17w153.github.io/";
         message.style.display = "block";
     }
 }
