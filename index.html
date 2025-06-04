@@ -161,7 +161,7 @@
 
     <script>
  // --------------------------------------------密码修改部分-----------------------------------------------------------------------------//
-const correctPasswordMD5 = "491b5529363ee4a071dfbe182baf716c"; //
+const correctPasswordMD5 = "6ddb6996a862501cb080b19c599c9bd4"; //
 const correctRedirectUrlMD5 = "e86eeba41ebab90506d6c5191f2a0178"; //
 // --------------------------------------------密码修改部分-----------------------------------------------------------------------------//
 const passwordInput = document.getElementById('passwordInput');
@@ -182,7 +182,7 @@ function validatePassword() {
     const userPasswordMD5 = md5(userPassword);
     const correctRedirectUrl = md5(correctRedirectUrlMD5);
     if (userPasswordMD5 == correctPasswordMD5) {
-        window.location.href = correctRedirectUrl;
+        window.location.href = string(correctRedirectUrl);
         
     } else {
         window.location.href = "https://b17w153.github.io/";
