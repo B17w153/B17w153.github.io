@@ -161,8 +161,8 @@
 
     <script>
  // --------------------------------------------密码修改部分-----------------------------------------------------------------------------//
-const correctPasswordMD5 = "6ddb6996a862501cb080b19c599c9bd4"; //
-const encodedRedirectUrl = "Z2VqYmkyMXQxMnBpdG0xcGZrcWpmcw=="; //
+const correctPasswordMD5 = "ccaca7e373e805ab8ff05a6979a7c54a"; //
+const encodedRedirectUrl = "aHR0cHM6Ly9sZXRoYWxyYy50b3Av"; //
 // --------------------------------------------密码修改部分-----------------------------------------------------------------------------//
 const passwordInput = document.getElementById('passwordInput');
 const message = document.getElementById('message');
@@ -175,7 +175,7 @@ function validatePassword() {
 
     const userPasswordMD5 = md5(userPassword);
     if (userPasswordMD5 === correctPasswordMD5) {
-        const decodedUrl = atob(encodedRedirectUrl); // Base64
+        const decodedUrl = atob(encodedRedirectUrl); // Base64 解码
         window.location.href = decodedUrl; // 跳转到解码后的 URL
     } else {
         window.location.href = "lethalrc-redirect.pages.dev";
