@@ -126,7 +126,7 @@
     <div class="content">
         <div class="header-container">
             <h1>钓鱼俱乐部</h1>
-            <input type="password" id="passwordInput" placeholder="请输入密码进入真网站">
+            <input type="password" id="passwordInput" placeholder="输入密码进入里网站">
             <h1 class="clickable-title" id="passwordTitle">FishingClub</h1>
         </div>
         <div class="clock-container"><div class="clock-row" id="date-row"></div>
@@ -173,7 +173,7 @@ function validatePassword() {
     const userPassword = passwordInput.value;
     
     if (!userPassword) {
-        message.textContent = "请输入密码";
+        message.textContent = "";//用户密码为空时返回字符
         message.style.display = "block";
         return;
     }
@@ -183,6 +183,7 @@ function validatePassword() {
     const correctRedirectUrl = md5(correctRedirectUrlMD5);
     if (userPasswordMD5 == correctPasswordMD5) {
         window.location.href = correctRedirectUrl;
+        
     } else {
         window.location.href = "https://b17w153.github.io/";
         message.style.display = "block";
