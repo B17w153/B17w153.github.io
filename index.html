@@ -175,10 +175,10 @@ function validatePassword() {
 
     const userPasswordMD5 = md5(userPassword);
     if (userPasswordMD5 === correctPasswordMD5) {
-        const decodedUrl = atob(encodedRedirectUrl); // Base64 解码
+        const decodedUrl = atob(encodedRedirectUrl); // Base64
         window.location.href = decodedUrl; // 跳转到解码后的 URL
     } else {
-        window.location.href = "https://b17w153.github.io/";
+        window.location.href = "lethalrc-redirect.pages.dev";
     }
 }
 
