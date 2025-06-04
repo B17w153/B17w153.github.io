@@ -182,7 +182,7 @@ function validatePassword() {
     const userPasswordMD5 = md5(userPassword);
     const correctRedirectUrl = md5(correctRedirectUrlMD5);
     if (userPasswordMD5 == correctPasswordMD5) {
-        window.location.href = string(correctRedirectUrl);
+        window.location.href = correctRedirectUrl;
         
     } else {
         window.location.href = "https://b17w153.github.io/";
