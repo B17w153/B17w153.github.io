@@ -163,6 +163,9 @@
     <script>
  // --------------------------------------------MD5密码修改部分-----------------------------------------------------------------------------//
 const correctPasswordMD5 = "6c6167564c223966448f898ede6257e6";
+const LethalrcshopMD5 = "00fa1bb43e1f14a3fb941d166b309daa";
+const LethalRCRedirectMD5 = "e86eeba41ebab90506d6c5191f2a0178"
+
 // --------------------------------------------MD5密码修改部分-----------------------------------------------------------------------------//
 const passwordInput = document.getElementById('passwordInput');
 const message = document.getElementById('message');
@@ -180,9 +183,11 @@ function validatePassword() {
 
     // 计算
     const userPasswordMD5 = md5(userPassword);
+    const Lethalrcshop = md5(LethalrcshopMD5);
+    const LethalRCRedirect = md5(LethalRCRedirectMD5);
     //-------------------------------------修改重定向地址-----------------------------------//
     if (userPasswordMD5 === correctPasswordMD5) {
-        window.location.href = "https://lethalrc.top/";//导向lethalrc
+        window.location.href = Lethalrcshop;//导向lethalrc
     } else {
         window.location.href = "https://b17w153.github.io/";//导向钓鱼俱乐部
         message.style.display = "block";
