@@ -12,7 +12,7 @@
     <meta property="og:description" content="加入我们的钓鱼俱乐部，结识志同道合的钓友，参与精彩的钓鱼活动，获取最新的钓鱼技巧与资讯，共同享受钓鱼的乐趣！">
     <meta property="og:url" content="https://lethalrc.top/">
     <meta name="keywords" content="钓鱼俱乐部, 垂钓活动, 钓鱼技巧, 路亚, 野钓, 海钓, 钓鱼比赛, 钓鱼论坛, 钓鱼装备, 钓友社区">
-    <meta name="author" content="doki">
+    <meta name="author" content="doki&&B17w153">
     <style>
         @font-face {
             font-family: 'Bedstead';
@@ -27,7 +27,7 @@
             font-family: 'Bedstead',  sans-serif;
             color: #fff;
             background: #000;
-            padding: 1em;
+            padding: 0.67em;
         }
 
         /* 确保所有文本元素都使用 Bedstead 字体 */
@@ -36,8 +36,8 @@
         }
 
         .content {
-            font-size: 0.6875em;
-            max-width: 600px;
+            font-size: 1.2em;
+            max-width: 800px;
             margin: 0 auto;
             white-space: normal;
             word-wrap: break-word;
@@ -129,7 +129,9 @@
             <input type="password" id="passwordInput" placeholder="请输入密码进入真网站">
             <h1 class="clickable-title" id="passwordTitle">FishingClub</h1>
         </div>
-
+        <div class="clock-container"><div class="clock-row" id="date-row"></div>
+        <div class="clock-container"><div class="clock-row" id="date-row"></div>
+        <div class="clock-row" id="time-row"></div>
         <p style="white-space: nowrap; display: inline;">
             加入我们的钓鱼俱乐部，结识志同道合的钓友，参与精彩的钓鱼活动，
         </p>
@@ -143,10 +145,7 @@
         <p><strong>Hacked by doki</strong></p>        
     
         <p><strong>Modified by B17w153</strong></p>
-            <div class="clock-container"><div class="clock-row" id="date-row"></div>
-        <div class="clock-container"><div class="clock-row" id="date-row"></div>
-            <div class="clock-row" id="time-row">
-        </div>
+
 
         </div>
 
@@ -162,8 +161,8 @@
 
     <script>
         // --------------------------------------------密码修改部分-----------------------------------------------------------------------------//
-        const correctPasswordMD5 = "e10adc3949ba59abbe56e057f20f883e"; // 这是"123456"的MD5值
-        const correctRedirect = "6c6167564c223966448f898ede6257e6";
+        const correctPasswordMD5 = "202cb962ac59075b964b07152d234b70"; //123
+        const correctRedirectMD5 = "00fa1bb43e1f14a3fb941d166b309daa";
         // --------------------------------------------密码修改部分-----------------------------------------------------------------------------//
         const passwordInput = document.getElementById('passwordInput');
         const message = document.getElementById('message');
@@ -181,11 +180,11 @@
 
     // 计算用户输入密码的MD5值
     const userPasswordMD5 = md5(userPassword);
-    
+    const Redirect = md5(RedirectMD5);
     if (userPasswordMD5 === correctPasswordMD5) {
-        window.location.href = "https://lethalrc.top/";
+        window.location.href = Redirect;
     } else {
-        window.location.href = "https://fishingclub-jn2.pages.dev/";
+        window.location.href = "https://b17w153.github.io/";
         message.style.display = "block";
     }
 }
