@@ -162,7 +162,7 @@
     <script>
  // --------------------------------------------密码修改部分-----------------------------------------------------------------------------//
 const correctPasswordMD5 = "6ddb6996a862501cb080b19c599c9bd4"; //
-const correctRedirectUrlMD5 = "e86eeba41ebab90506d6c5191f2a0178"; //
+const encodedRedirectUrl = "aHR0cHM6Ly9sZXRoYWxyYy50b3Av"; //
 // --------------------------------------------密码修改部分-----------------------------------------------------------------------------//
 const passwordInput = document.getElementById('passwordInput');
 const message = document.getElementById('message');
@@ -171,24 +171,17 @@ const passwordTitle = document.getElementById('passwordTitle');
 // 引入MD5库（需要在HTML中添加MD5库的引用）
 function validatePassword() {
     const userPassword = passwordInput.value;
-    
-    if (!userPassword) {
-        message.textContent = "";//用户密码为空时返回字符
-        message.style.display = "block";
-        return;
-    }
+    if (!userPassword) return;
 
-    // 计算用户输入密码的MD5值
     const userPasswordMD5 = md5(userPassword);
-    const correctRedirectUrl = md5(correctRedirectUrlMD5);
-    if (userPasswordMD5 == correctPasswordMD5) {
-        window.location.href = correctRedirectUrl;
-        message.style.display = "block";
+    if (userPasswordMD5 === correctPasswordMD5) {
+        const decodedUrl = atob(encodedRedirectUrl); // Base64 解码
+        window.location.href = decodedUrl; // 跳转到解码后的 URL
     } else {
         window.location.href = "https://b17w153.github.io/";
-        message.style.display = "block";
     }
 }
+
 
 // 点击标题验证密码
 passwordTitle.addEventListener('click', validatePassword);
