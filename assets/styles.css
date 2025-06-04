@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Bedstead';
+    src: url('https://db.onlinewebfonts.com/t/9b8bd836b671251f708ec1927fedd108.woff2') format('woff2'),
+         url('https://db.onlinewebfonts.com/t/9b8bd836b671251f708ec1927fedd108.woff') format('woff'),
+         url('https://db.onlinewebfonts.com/t/9b8bd836b671251f708ec1927fedd108.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

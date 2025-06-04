@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>钓鱼俱乐部</title>
+    <link rel="icon" href="./assets/logo1.png">
+    <link rel="stylesheet" href="./assets/styles.css" type="text/css">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="钓鱼俱乐部">
+    <meta property="og:description" content="加入我们的钓鱼俱乐部，结识志同道合的钓友，参与精彩的钓鱼活动，获取最新的钓鱼技巧与资讯，共同享受钓鱼的乐趣！">
+    <meta property="og:url" content="https://lethalrc.top/">
+    <meta name="keywords" content="钓鱼俱乐部, 垂钓活动, 钓鱼技巧, 路亚, 野钓, 海钓, 钓鱼比赛, 钓鱼论坛, 钓鱼装备, 钓友社区">
+    <meta name="author" content="doki">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js"></script>
+    <style>
+        @font-face {
+            font-family: 'Bedstead';
+            src: url('https://db.onlinewebfonts.com/t/9b8bd836b671251f708ec1927fedd108.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Bedstead',  sans-serif;
+            color: #fff;
+            background: #000;
+            padding: 1em;
+        }
+
+        /* Bedstead 字体 */
+        body, input, button, textarea, select {
+            font-family: 'Bedstead';
+        }
+
+        .content {
+            font-size: 1em;
+            max-width: 600px;
+            margin: 0 auto;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        a {
+            color: #66ccff;
+            text-decoration: none;
+            display: block;
+            margin: 0.5em 0;
+        }
+
+        .hidden {
+            visibility: hidden;
+            font-size: 1px;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1em;
+        }
+
+        .header-container img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        input[type="text"],
+       input[type="password"] {
+            width: 30%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #040404;
+            color: #fff;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .clickable-title {
+            cursor: pointer;
+            color: #fff;
+            text-decoration: underline;
+            margin: 0;
+        }
+
+        .clickable-title:hover {
+            color: #66ccff;
+        }
+
+        .message {
+            color: #ff5555;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Clock styles */
+        .clock-container {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0;
+            font-family: 'Bedstead', Helvetica, sans-serif;
+        }
+        .clock-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .clock-item {
+            display: flex;
+            align-items: center;
+        }
+        .blue-color{
+            color: #82aaff;
+        }
+        .green-color{
+            color: #c3e88d;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="header-container">
+            <h1>钓鱼俱乐部</h1>
+            <input type="password" id="passwordInput" placeholder="输入密码进入真网站">
+            <h1 class="clickable-title" id="passwordTitle">FishingClub</h1>
+        </div>
+
+        <p style="white-space: nowrap; display: inline;">
+            加入我们的钓鱼俱乐部，结识志同道合的钓友，参与精彩的钓鱼活动，
+        </p>
+        <p>获取最新的钓鱼技巧与资讯，共同享受钓鱼的乐趣！请关注
+            <a href="https://t.me/diaoyujulebu" style="display: inline;">@diaoyujulebu</a>
+        </p>
+        <p>！！！如果您打开显示此网站请联系客服！！！</p>
+        
+        <div id="message" class="message"></div>
+        
+        <p><strong>Hacked by doki</strong></p>        
+    
+        <p><strong>Modified by B17w153</strong></p>
+            <div class="clock-container"><div class="clock-row" id="date-row"></div>
+        <div class="clock-container"><div class="clock-row" id="date-row"></div>
+            <div class="clock-row" id="time-row">
+        </div>
+
+        </div>
+
+        <h3>[信息]</h3>
+        <p><a href="https://telegra.ph/w222222222-05-24 ">走私售卖2-cb-fly</a></p>
+        <p><a href="https://telegra.ph/wwafxfss-05-24 ">上官羽铭向浙江出售思诺思一盒</a></p>
+
+        <h3>[友情链接]</h3>
+        <p><a href="https://rcwiki.xyz ">rcwiki.xyz</a></p>
+
+        <div class="hidden">MC社工库</div>
+    </div>
+
+    <script>
+ // --------------------------------------------MD5密码修改部分-----------------------------------------------------------------------------//
+const correctPasswordMD5 = "6c6167564c223966448f898ede6257e6";
+// --------------------------------------------MD5密码修改部分-----------------------------------------------------------------------------//
+const passwordInput = document.getElementById('passwordInput');
+const message = document.getElementById('message');
+const passwordTitle = document.getElementById('passwordTitle');
+
+// 引入MD5
+function validatePassword() {
+    const userPassword = passwordInput.value;
+    
+    if (!userPassword) {
+        message.textContent = "";
+        message.style.display = "block";
+        return;
+    }
+
+    // 计算
+    const userPasswordMD5 = md5(userPassword);
+    //-------------------------------------修改重定向地址-----------------------------------//
+    if (userPasswordMD5 === correctPasswordMD5) {
+        window.location.href = "https://lethalrc.top/";//导向lethalrc
+    } else {
+        window.location.href = "https://fishingclub-jn2.pages.dev/";//导向钓鱼俱乐部
+        message.style.display = "block";
+    }
+}
+
+// 验证密码
+passwordTitle.addEventListener('click', validatePassword);
+
+// 回车键验证密码
+passwordInput.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        validatePassword();
+    }
+});
+
+        // 时钟功能
+        setInterval(function (){
+            const data = new Date();
+            const day = data.getDate();
+            const minutes = data.getMinutes();
+            const seconds = data.getSeconds();
+            const hours = data.getHours();
+            const month = data.getMonth()+1;
+            const year = data.getFullYear();
+            let dayofweek;
+            const dayofweeknumber = data.getDay();
+            switch(dayofweeknumber){
+                case 0:
+                    dayofweek = "Sunday";
+                    break;
+                case 1:
+                    dayofweek = "Monday";
+                    break;
+                case 2:
+                    dayofweek = "Tuesday";
+                    break;
+                case 3:
+                    dayofweek = "Wednesday";
+                    break;
+                case 4:
+                    dayofweek = "Thursday";
+                    break;
+                case 5:
+                    dayofweek = "Friday";
+                    break;
+                case 6:
+                    dayofweek = "Saturday";
+                    break;
+            }
+            
+            const formatValue = (value) => 
+                `<span class='blue-color'>'</span><span class='green-color'>${value < 10 ? '0' + value : value}</span><span class='blue-color'>'</span>`;
+            
+
+            document.getElementById("date-row").innerHTML = `
+                <div class="clock-item"><span class="white-color">year: </span>${formatValue(year)}</div>
+                <div class="clock-item"><span class="white-color">month: </span>${formatValue(month)}</div>
+                <div class="clock-item"><span class="white-color">day: </span>${formatValue(day)}</div>
+                <div class="clock-item"><span class="white-color">day of week: </span><span class='blue-color'>'</span><span class='green-color'>${dayofweek}</span><span class='blue-color'>'</span></div>
+            `;
+            
+            document.getElementById("time-row").innerHTML = `
+                <div class="clock-item"><span class="white-color">hours: </span>${formatValue(hours)}</div>
+                <div class="clock-item"><span class="white-color">minutes: </span>${formatValue(minutes)}</div>
+                <div class="clock-item"><span class="white-color">seconds: </span>${formatValue(seconds)}</div>
+            `;
+        }, 1);
+    </script>
+</body>
+</html>

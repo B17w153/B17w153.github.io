@@ -1,0 +1,26 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "Working javascript clock object for the nerds out there :)\nTheme used: Visual Studio Code - Material theme darker",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"tags" : [ "Technology" ],
+	"title" : "Javascript clock object (24hr clock)",
+	"type" : "Web",
+	"version" : 4,
+	"visibility" : "public",
+	"workshopid" : "2999942294",
+	"workshopurl" : "steam://url/CommunityFilePage/2999942294"
+}
